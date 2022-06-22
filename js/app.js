@@ -104,6 +104,8 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 	// Validate
 	if(title === '' || author === '' || isbn === '') {
 			UI.showAlert('Please fill in all fields', 'danger');
+	} else if(isNaN(isbn)) {
+		UI.showAlert("Please, enter a number!", "danger");
 	} else {
 	// Instatiate book
 	const book = new Book(title, author, isbn);
